@@ -8,7 +8,9 @@ export function ProcurementSection() {
       <div className="container-shell grid gap-10 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:py-24">
         <div>
           <p className="label-kicker text-charge">B2B procurement intake</p>
-          <h1 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">ENKO core system hardware configurator.</h1>
+          <h1 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-6xl md:leading-[0.95]">
+            ENKO core system hardware configurator.
+          </h1>
           <p className="mt-5 text-sm leading-7 text-forge/65">
             Submit your network specifications to receive an engineered pricing spec sheet for FLOW, STORM, or BLAZE
             deployments.
@@ -61,10 +63,10 @@ export function ProcurementSection() {
             <input className="mt-2 h-12 w-full border border-forge/18 bg-white/55 px-3 text-sm outline-none focus:border-charge" />
           </label>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <button className="industrial-button bg-forge text-white" type="button">
+            <button className="industrial-button bg-forge text-white w-full sm:w-auto" type="button">
               Submit procurement specification
             </button>
-            <button className="industrial-button bg-charge text-forge" type="button">
+            <button className="industrial-button bg-charge text-forge w-full sm:w-auto" type="button">
               Connect direct via WhatsApp
             </button>
           </div>

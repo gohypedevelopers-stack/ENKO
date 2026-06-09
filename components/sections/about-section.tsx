@@ -4,7 +4,9 @@ export function AboutSection() {
       <div className="container-shell grid gap-10 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:py-24">
         <div>
           <p className="label-kicker text-charge">The infrastructure layer</p>
-          <h2 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">The backbone behind the network.</h2>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-6xl md:leading-[0.95]">
+            The backbone behind the network.
+          </h2>
         </div>
         <div className="grid gap-6">
           <div className="border-l-4 border-charge pl-6">

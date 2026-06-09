@@ -8,11 +8,12 @@ export function OemSection() {
         <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-forge/62">
           Deploy our rugged hardware under your own brand. Comprehensive customization options from chassis colorways to firmware and API integration.
         </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="/partners" className="industrial-button bg-forge text-white">
+        
+        <div className="mt-8 grid grid-cols-1 gap-3 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center sm:gap-3">
+          <a href="/partners" className="industrial-button bg-forge text-white w-full sm:w-auto">
             Access portal
           </a>
-          <a href="/products" className="industrial-button bg-warm text-forge">
+          <a href="/products" className="industrial-button bg-warm text-forge w-full sm:w-auto">
             View docs
           </a>
         </div>

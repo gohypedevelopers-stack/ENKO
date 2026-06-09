@@ -6,29 +6,45 @@ export function ProductsSection() {
       <div className="container-shell py-16 lg:py-24">
         <div className="max-w-3xl">
           <p className="label-kicker text-charge">Hardware systems component architecture</p>
-          <h2 className="mt-4 text-4xl font-black uppercase md:text-6xl">Full-spectrum CCS2 charging assets.</h2>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-6xl md:leading-[0.95]">
+            Full-spectrum CCS2 charging assets.
+          </h2>
           <p className="mt-5 text-sm leading-7 text-forge/65">
             From entry-level commercial AC plug-ins to high-power highway DC ultra-chargers, select the exact hardware
             footprint your network requires.
           </p>
         </div>
+        
+        {/* Responsive Table Grid */}
         <div className="mt-10 overflow-hidden border border-forge/20">
-          <div className="grid grid-cols-[1fr_1fr_1.35fr] bg-forge px-4 py-3 text-xs font-black uppercase tracking-[0.12em] text-white">
+          {/* Header - Hidden on mobile */}
+          <div className="hidden md:grid md:grid-cols-[1fr_1fr_1.35fr] bg-forge px-4 py-3 text-xs font-black uppercase tracking-[0.12em] text-white">
             <span>SKU</span>
             <span>Power Output</span>
             <span>Primary Application</span>
           </div>
+          {/* Rows */}
           {productMatrix.map(([sku, power, application], index) => (
             <div
               key={sku}
               className={`grid grid-cols-1 gap-2 border-t border-forge/12 px-4 py-4 text-sm md:grid-cols-[1fr_1fr_1.35fr] ${index % 2 === 0 ? 'bg-warm/70' : 'bg-white/35'}`}
             >
-              <span className="font-black uppercase">{sku}</span>
-              <span className="font-bold text-forge/72">{power}</span>
-              <span className="text-forge/65">{application}</span>
+              <div className="flex justify-between md:block">
+                <span className="md:hidden label-kicker text-forge/40">SKU</span>
+                <span className="font-black uppercase">{sku}</span>
+              </div>
+              <div className="flex justify-between md:block">
+                <span className="md:hidden label-kicker text-forge/40">Power</span>
+                <span className="font-bold text-forge/72">{power}</span>
+              </div>
+              <div className="flex flex-col md:block mt-1 md:mt-0">
+                <span className="md:hidden label-kicker text-forge/40 mb-1">Application</span>
+                <span className="text-forge/65">{application}</span>
+              </div>
             </div>
           ))}
         </div>
+        
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <div className="border border-forge/15 p-5">
             <h3 className="font-black uppercase">Flow common spec</h3>

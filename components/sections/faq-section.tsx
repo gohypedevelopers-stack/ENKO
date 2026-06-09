@@ -6,7 +6,9 @@ export function FaqSection() {
       <div className="container-shell py-16 lg:py-24">
         <div className="max-w-3xl">
           <p className="label-kicker text-charge">FAQ Section</p>
-          <h1 className="mt-4 text-4xl font-black uppercase leading-none md:text-6xl">Protocol and deployment answers.</h1>
+          <h1 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-6xl md:leading-[0.95]">
+            Protocol and deployment answers.
+          </h1>
           <p className="mt-5 text-sm leading-7 text-forge/65">
             Direct answers for communication protocol, regional supply, and deployment readiness.
           </p>
