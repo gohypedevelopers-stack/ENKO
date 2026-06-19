@@ -1,16 +1,27 @@
+import { navItems } from '@/lib/site-data';
+
 export function SiteFooter() {
   return (
     <footer className="bg-forge text-white">
-      <div className="container-shell grid gap-10 py-14 md:grid-cols-2 xl:grid-cols-4">
-        <div>
-          <img src="/Enko logo.png" alt="ENKO Logo" className="h-48 w-auto object-contain -my-16 scale-125 origin-left" />
+      <div className="container-shell grid gap-10 py-14 md:grid-cols-2 xl:grid-cols-6">
+        <div className="xl:col-span-2">
+          <img src="/Enko logo.png" alt="ENKO Logo" className="h-48 w-auto object-contain -my-16 -ml-8 scale-125 origin-left" />
           <p className="mt-4 max-w-xs text-sm leading-7 text-white/55">
-            ENKO Energy Pvt Ltd. Action, protocol, all systems operational.
+            ENKO Energy Pvt Ltd
           </p>
-          <p className="mt-6 text-xs uppercase tracking-[0.12em] text-white/35">Copyright 2026 ENKO Energy</p>
         </div>
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Regional Hubs</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">System Navigation</h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/55">
+            {navItems.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} className="hover:text-charge transition-colors">{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Regional Hub Links</h3>
           <ul className="mt-4 space-y-2 text-sm text-white/55">
             <li>Tamil Nadu Sector</li>
             <li>Kerala Sector</li>
@@ -18,16 +29,23 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Technical Data</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Technical Node Links</h3>
           <ul className="mt-4 space-y-2 text-sm text-white/55">
-            <li>Hardware specifications</li>
-            <li>OCPP integration status</li>
-            <li>Service level agreement</li>
+            <li>Hardware Specifications</li>
+            <li>OCPP Integration Status</li>
           </ul>
         </div>
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Comm Link</h3>
-          <p className="mt-4 text-sm text-white/55">WhatsApp secure channel integration.</p>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Secure Connect Line</h3>
+          <p className="mt-4 text-sm text-white/55">WhatsApp Secure Channel Integration</p>
+        </div>
+      </div>
+      
+      <div className="border-t border-white/10 bg-black/20">
+        <div className="container-shell py-6 flex items-center justify-center">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40 text-center">
+            &copy; 2026 ENKO ENERGY. ACTION, PROTOCOL, ALL SYSTEMS OPERATIONAL.
+          </p>
         </div>
       </div>
     </footer>
