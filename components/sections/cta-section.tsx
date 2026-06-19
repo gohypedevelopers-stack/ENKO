@@ -11,10 +11,10 @@ export function CtaSection() {
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row lg:flex-col w-full sm:w-auto">
-          <a href="/procurement" className="industrial-button bg-forge text-white w-full">
+          <a href="/contact" className="industrial-button bg-forge text-white w-full">
             Request pricing spec
           </a>
-          <a href="/procurement" className="industrial-button bg-charge border-forge text-forge hover:bg-forge hover:text-white w-full">
+          <a href="/contact" className="industrial-button bg-charge border-forge text-forge hover:bg-forge hover:text-white w-full">
             Contact sales team
           </a>
         </div>

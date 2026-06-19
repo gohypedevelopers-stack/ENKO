@@ -27,10 +27,10 @@ export function HeroSection() {
           
           {/* Desktop Buttons */}
           <div className="mt-8 hidden lg:grid lg:grid-cols-1 gap-3 lg:flex lg:flex-wrap">
-            <a href="/procurement" className="industrial-button bg-charge text-forge w-full sm:w-auto">
+            <a href="/contact" className="industrial-button bg-charge text-forge w-full sm:w-auto">
               WhatsApp Us
             </a>
-            <a href="/procurement" className="industrial-button bg-warm text-forge w-full sm:w-auto">
+            <a href="/contact" className="industrial-button bg-warm text-forge w-full sm:w-auto">
               Request a Quote
             </a>
           </div>
@@ -73,10 +73,10 @@ export function HeroSection() {
             India&apos;s EV charging infrastructure, built in India. Full range. Field-ready. Priced right.
           </p>
           <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
-            <a href="/procurement" className="industrial-button bg-charge text-forge w-full sm:w-auto">
+            <a href="/contact" className="industrial-button bg-charge text-forge w-full sm:w-auto">
               WhatsApp Us
             </a>
-            <a href="/procurement" className="industrial-button bg-warm text-forge w-full sm:w-auto">
+            <a href="/contact" className="industrial-button bg-warm text-forge w-full sm:w-auto">
               Request a Quote
             </a>
           </div>

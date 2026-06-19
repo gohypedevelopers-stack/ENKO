@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { navItems } from '@/lib/site-data';
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isContactActive = pathname === '/contact';
 
   return (
     <header className="sticky top-0 z-50 border-b border-forge/10 bg-warm/92 backdrop-blur-sm">
@@ -24,7 +27,10 @@ export function SiteHeader() {
 
         {/* Right Action & Hamburger */}
         <div className="flex items-center gap-4">
-          <a href="/procurement" className="hidden sm:inline-block border border-forge bg-forge px-4 py-2 text-white transition hover:bg-charge hover:text-forge">
+          <a 
+            href="/contact" 
+            className={`hidden sm:inline-block border px-4 py-2 transition hover:bg-charge hover:text-forge hover:border-charge ${isContactActive ? 'border-charge bg-charge text-forge' : 'border-forge bg-forge text-white'}`}
+          >
             Request Quote
           </a>
 
@@ -61,9 +67,9 @@ export function SiteHeader() {
             </a>
           ))}
           <a
-            href="/procurement"
+            href="/contact"
             onClick={() => setIsOpen(false)}
-            className="mt-4 sm:hidden block text-center border border-forge bg-forge px-4 py-3 text-white transition hover:bg-charge hover:text-forge"
+            className={`mt-4 sm:hidden block text-center border px-4 py-3 transition hover:bg-charge hover:text-forge hover:border-charge ${isContactActive ? 'border-charge bg-charge text-forge' : 'border-forge bg-forge text-white'}`}
           >
             Request Quote
           </a>
