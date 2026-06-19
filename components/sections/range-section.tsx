@@ -62,6 +62,12 @@ export function RangeSection() {
             <RangeCard key={card.name} card={card} index={index} />
           ))}
         </div>
+        
+        <div className="mt-16 flex justify-center">
+          <a href="/products" className="industrial-button bg-charge text-forge w-full sm:w-auto text-center">
+            Show All Products
+          </a>
+        </div>
       </div>
     </section>
   );

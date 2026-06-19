@@ -21,11 +21,12 @@ export function HeroSection() {
               as="span"
             />
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-forge/70 md:text-lg">
+          <p className="mt-6 hidden lg:block max-w-xl text-base leading-7 text-forge/70 md:text-lg">
             India&apos;s EV charging infrastructure, built in India. Full range. Field-ready. Priced right.
           </p>
           
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
+          {/* Desktop Buttons */}
+          <div className="mt-8 hidden lg:grid lg:grid-cols-1 gap-3 lg:flex lg:flex-wrap">
             <a href="/procurement" className="industrial-button bg-charge text-forge w-full sm:w-auto">
               WhatsApp Us
             </a>
@@ -63,6 +64,21 @@ export function HeroSection() {
           <div className="mt-2 flex justify-between text-[10px] uppercase tracking-[0.16em] text-forge/45">
             <span>System cornerstone</span>
             <span>DC1 500V-1000V</span>
+          </div>
+        </div>
+
+        {/* Mobile Text & Buttons */}
+        <div className="mt-8 flex flex-col gap-6 lg:hidden col-span-1 md:col-span-2">
+          <p className="max-w-xl text-base leading-7 text-forge/70 md:text-lg">
+            India&apos;s EV charging infrastructure, built in India. Full range. Field-ready. Priced right.
+          </p>
+          <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
+            <a href="/procurement" className="industrial-button bg-charge text-forge w-full sm:w-auto">
+              WhatsApp Us
+            </a>
+            <a href="/procurement" className="industrial-button bg-warm text-forge w-full sm:w-auto">
+              Request a Quote
+            </a>
           </div>
         </div>
       </div>
