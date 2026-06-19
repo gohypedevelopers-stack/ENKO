@@ -9,10 +9,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-forge/10 bg-warm/92 backdrop-blur-sm">
       <div className="container-shell flex items-center justify-between py-4 text-[11px] font-semibold uppercase tracking-[0.18em]">
-        <a href="/" className="text-base font-black tracking-[0.18em]">
-          ENKO
+        <a href="/" className="flex items-center">
+          <img src="/Enko logo.png" alt="ENKO Logo" className="h-32 w-auto object-contain -my-10 scale-125 origin-left" />
         </a>
-        
+
         {/* Desktop Nav */}
         <nav className="hidden gap-6 lg:flex">
           {navItems.map((item) => (
@@ -21,15 +21,15 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-        
+
         {/* Right Action & Hamburger */}
         <div className="flex items-center gap-4">
           <a href="/procurement" className="hidden sm:inline-block border border-forge bg-forge px-4 py-2 text-white transition hover:bg-charge hover:text-forge">
             Request Quote
           </a>
-          
+
           {/* Mobile Hamburger Button */}
-          <button 
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="flex h-9 w-9 items-center justify-center border border-forge/15 bg-transparent text-forge hover:bg-forge/5 lg:hidden cursor-pointer"
             aria-label="Toggle navigation menu"
@@ -51,17 +51,17 @@ export function SiteHeader() {
       <div className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden border-b border-forge/10 bg-warm ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <nav className="flex flex-col gap-4 p-6 text-[11px] font-semibold uppercase tracking-[0.18em]">
           {navItems.map((item) => (
-            <a 
-              key={item.label} 
-              href={item.href} 
+            <a
+              key={item.label}
+              href={item.href}
               onClick={() => setIsOpen(false)}
               className="py-1 text-forge/70 hover:text-forge transition-colors"
             >
               {item.label}
             </a>
           ))}
-          <a 
-            href="/procurement" 
+          <a
+            href="/procurement"
             onClick={() => setIsOpen(false)}
             className="mt-4 sm:hidden block text-center border border-forge bg-forge px-4 py-3 text-white transition hover:bg-charge hover:text-forge"
           >

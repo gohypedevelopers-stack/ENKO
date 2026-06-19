@@ -3,7 +3,7 @@ export function SiteFooter() {
     <footer className="bg-forge text-white">
       <div className="container-shell grid gap-10 py-14 md:grid-cols-2 xl:grid-cols-4">
         <div>
-          <div className="text-2xl font-black tracking-[0.18em] text-charge">ENKO</div>
+          <img src="/Enko logo.png" alt="ENKO Logo" className="h-48 w-auto object-contain -my-16 scale-125 origin-left" />
           <p className="mt-4 max-w-xs text-sm leading-7 text-white/55">
             ENKO Energy Pvt Ltd. Action, protocol, all systems operational.
           </p>

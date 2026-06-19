@@ -4,71 +4,84 @@ const series = ['FLOW AC Series', 'STORM DC Series', 'BLAZE ULTRA Series'];
 
 export function ProcurementSection() {
   return (
-    <section id="procurement" className="grid-paper min-h-[calc(100vh-73px)] border-b border-forge/10">
-      <div className="container-shell grid gap-10 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:py-24">
-        <div>
-          <p className="label-kicker text-charge">B2B procurement intake</p>
-          <h1 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-6xl md:leading-[0.95]">
-            ENKO core system hardware configurator.
-          </h1>
-          <p className="mt-5 text-sm leading-7 text-forge/65">
-            Submit your network specifications to receive an engineered pricing spec sheet for FLOW, STORM, or BLAZE
-            deployments.
+    <section id="procurement" className="grid-paper border-b border-forge/10 bg-[#f4f2ec]">
+      <div className="container-shell py-16 lg:py-24">
+        <div className="max-w-4xl mx-auto mb-10 text-left">
+          <p className="label-kicker text-charge">5.2 B2B Procurement Intake Form Fields</p>
+          <h2 className="mt-4 text-3xl font-black uppercase text-forge leading-[1.05] md:text-4xl md:leading-[1.1]">
+            ENKO CORE SYSTEM HARDWARE CONFIGURATOR
+          </h2>
+          <p className="mt-4 text-sm lg:text-base leading-7 text-forge/80 italic">
+            Submit your network specifications to receive an engineered pricing spec sheet.
           </p>
-          <div className="mt-8 border-l-4 border-charge pl-5">
-            <p className="text-sm font-bold uppercase leading-7 text-forge/70">
-              Built for CPOs, vehicle OEMs, fleet logistics providers, and institutional real estate buyers.
-            </p>
-          </div>
         </div>
-        <form className="border border-forge/18 bg-warm p-5 shadow-soft">
-          <p className="label-kicker text-forge/42">Contact metrics</p>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {['Full Name', 'Corporate Email Address', 'Contact Phone Number', 'Company Entity Name'].map((field) => (
-              <label key={field} className="block">
-                <span className="label-kicker text-forge/45">{field}</span>
-                <input className="mt-2 h-12 w-full border border-forge/18 bg-white/55 px-3 text-sm outline-none focus:border-charge" />
-              </label>
-            ))}
-            <label className="block">
-              <span className="label-kicker text-forge/45">Primary Business Role</span>
-              <select className="mt-2 h-12 w-full border border-forge/18 bg-white/55 px-3 text-sm outline-none focus:border-charge">
-                {businessRoles.map((role) => (
-                  <option key={role}>{role}</option>
-                ))}
-              </select>
-            </label>
-            <label className="block">
-              <span className="label-kicker text-forge/45">Target Region</span>
-              <select className="mt-2 h-12 w-full border border-forge/18 bg-white/55 px-3 text-sm outline-none focus:border-charge">
-                {regions.map((region) => (
-                  <option key={region}>{region}</option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div className="mt-5">
-            <span className="label-kicker text-forge/45">Selected Product Series</span>
-            <div className="mt-3 grid gap-3 md:grid-cols-3">
-              {series.map((item) => (
-                <label key={item} className="flex items-center gap-3 border border-forge/14 bg-white/35 p-3 text-sm font-bold">
-                  <input type="checkbox" className="h-4 w-4 accent-[#E8A020]" />
-                  {item}
+        <form className="border border-forge/15 bg-white p-8 md:p-12 shadow-soft max-w-4xl mx-auto">
+          {/* 1. Contact Metrics */}
+          <div className="mb-12">
+            <h3 className="text-xl font-black uppercase text-charge border-b border-forge/10 pb-4 mb-6">1. Contact Metrics:</h3>
+            <div className="grid gap-6 md:grid-cols-2">
+              {['Full Name', 'Corporate Email Address', 'Contact Phone Number', 'Company Entity Name'].map((field) => (
+                <label key={field} className="block">
+                  <span className="label-kicker text-forge/50">{field}</span>
+                  <input className="mt-2 h-12 w-full border border-forge/20 bg-warm/30 px-3 text-sm outline-none focus:border-charge transition-colors" />
                 </label>
               ))}
             </div>
           </div>
-          <label className="mt-5 block">
-            <span className="label-kicker text-forge/45">Estimated Unit Quantity</span>
-            <input className="mt-2 h-12 w-full border border-forge/18 bg-white/55 px-3 text-sm outline-none focus:border-charge" />
-          </label>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <button className="industrial-button bg-forge text-white w-full sm:w-auto" type="button">
-              Submit procurement specification
-            </button>
-            <button className="industrial-button bg-charge text-forge w-full sm:w-auto" type="button">
-              Connect direct via WhatsApp
-            </button>
+
+          {/* 2. Operational Parameters */}
+          <div className="mb-12">
+            <h3 className="text-xl font-black uppercase text-charge border-b border-forge/10 pb-4 mb-6">2. Operational Parameters:</h3>
+            <div className="grid gap-6 md:grid-cols-2">
+              <label className="block">
+                <span className="label-kicker text-forge/50">Primary Business Role</span>
+                <select className="mt-2 h-12 w-full border border-forge/20 bg-warm/30 px-3 text-sm outline-none focus:border-charge transition-colors">
+                  {businessRoles.map((role) => (
+                    <option key={role}>{role}</option>
+                  ))}
+                </select>
+              </label>
+              <label className="block">
+                <span className="label-kicker text-forge/50">Target Region of Deployment</span>
+                <select className="mt-2 h-12 w-full border border-forge/20 bg-warm/30 px-3 text-sm outline-none focus:border-charge transition-colors">
+                  {regions.map((region) => (
+                    <option key={region}>{region}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          </div>
+
+          {/* 3. Hardware Profile Requirement */}
+          <div className="mb-12">
+            <h3 className="text-xl font-black uppercase text-charge border-b border-forge/10 pb-4 mb-6">3. Hardware Profile Requirement:</h3>
+            <div className="mb-6">
+              <span className="label-kicker text-forge/50">Selected Product Series</span>
+              <div className="mt-3 grid gap-3 md:grid-cols-3">
+                {series.map((item) => (
+                  <label key={item} className="flex items-center gap-3 border border-forge/20 bg-warm/30 p-3 text-sm font-bold cursor-pointer transition-colors hover:bg-warm">
+                    <input type="checkbox" className="h-4 w-4 accent-charge" />
+                    {item}
+                  </label>
+                ))}
+              </div>
+            </div>
+            <label className="block max-w-sm">
+              <span className="label-kicker text-forge/50">Estimated Unit Quantity</span>
+              <input className="mt-2 h-12 w-full border border-forge/20 bg-warm/30 px-3 text-sm outline-none focus:border-charge transition-colors" type="number" />
+            </label>
+          </div>
+
+          {/* Submission Triggers (No header) */}
+          <div className="pt-4 border-t border-forge/10">
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <button className="industrial-button bg-forge text-white w-full sm:w-auto hover:bg-[#1a1a1a] transition-colors" type="button">
+                SUBMIT PROCUREMENT SPECIFICATION
+              </button>
+              <button className="industrial-button bg-charge text-forge w-full sm:w-auto hover:bg-[#d89117] transition-colors" type="button">
+                CONNECT DIRECT VIA WHATSAPP
+              </button>
+            </div>
           </div>
         </form>
       </div>

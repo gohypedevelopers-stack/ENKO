@@ -1,64 +1,119 @@
-import { productMatrix } from '@/lib/site-data';
+"use client";
+import { useState } from 'react';
+import { productCards } from '@/lib/site-data';
+
+function ProductCard({ card, index }: { card: typeof productCards[0], index: number }) {
+  const [showSpecs, setShowSpecs] = useState(false);
+
+  return (
+    <article className="bg-white/60 backdrop-blur-xl border border-white p-6 rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between self-start transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+      <div>
+        <p className="mb-4 text-[10px] font-black uppercase tracking-[0.16em] text-charge">
+          {card.tag}
+        </p>
+        <div className="h-64 bg-white border border-forge/5 shadow-sm rounded-sm relative overflow-hidden flex items-center justify-center">
+          <img src={card.image} alt={card.name} className="max-w-full max-h-full object-contain p-4 mix-blend-multiply" />
+        </div>
+        <h3 className="mt-6 text-xl font-black">
+          {index}. {card.name}
+        </h3>
+
+        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${showSpecs ? 'max-h-[500px] opacity-100 mt-5' : 'max-h-0 opacity-0'}`}>
+          <div className="space-y-5 pt-5 border-t border-forge/10">
+            <div>
+              <p className="flex items-center gap-2 mb-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-charge flex-shrink-0"></span>
+                <span className="text-[10px] font-black uppercase tracking-[0.16em] text-forge/50">Power Output</span>
+              </p>
+              <p className="text-sm font-medium text-forge/90 pl-3.5 leading-tight">{card.specs[0][1]}</p>
+            </div>
+            <div>
+              <p className="flex items-center gap-2 mb-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-charge flex-shrink-0"></span>
+                <span className="text-[10px] font-black uppercase tracking-[0.16em] text-forge/50">Primary Application</span>
+              </p>
+              <p className="text-sm font-medium leading-relaxed text-forge/90 pl-3.5">{card.copy}</p>
+            </div>
+            {card.specs.length > 1 && (
+              <div>
+                <p className="flex items-center gap-2 mb-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-charge flex-shrink-0"></span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.16em] text-forge/50">Financial Advantage</span>
+                </p>
+                <p className="text-sm font-medium text-forge/90 pl-3.5 leading-tight">{card.specs[1][1]}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+      
+      <button 
+        onClick={() => setShowSpecs(!showSpecs)}
+        className="mt-6 w-full py-3.5 bg-white border border-forge/10 shadow-sm text-xs font-black tracking-[0.16em] uppercase transition-all hover:bg-charge hover:text-white hover:border-charge hover:shadow-md text-forge"
+      >
+        {showSpecs ? '[ HIDE TECH SPECS ]' : '[ VIEW TECH SPECS ]'}
+      </button>
+    </article>
+  );
+}
 
 export function ProductsSection() {
   return (
     <section id="products" className="grid-paper border-b border-forge/10">
       <div className="container-shell py-16 lg:py-24">
-        <div className="max-w-3xl">
-          <p className="label-kicker text-charge">Hardware systems component architecture</p>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-6xl md:leading-[0.95]">
-            Full-spectrum CCS2 charging assets.
+
+        {/* 3.1 Portfolio Catalog Introduction */}
+        <div className="max-w-3xl mb-16">
+          <p className="label-kicker text-charge">[ HARDWARE SYSTEMS COMPONENT ARCHITECTURE ]</p>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-5xl md:leading-[0.95]">
+            Full-Spectrum CCS2 Charging Assets.
           </h2>
-          <p className="mt-5 text-sm leading-7 text-forge/65">
-            From entry-level commercial AC plug-ins to high-power highway DC ultra-chargers, select the exact hardware
-            footprint your network requires.
+          <p className="mt-5 text-sm lg:text-base leading-7 text-forge/75">
+            From entry-level commercial AC plug-ins to high-power highway DC ultra-chargers, select the exact hardware footprint your network requires.
           </p>
         </div>
-        
-        {/* Responsive Table Grid */}
-        <div className="mt-10 overflow-hidden border border-forge/20">
-          {/* Header - Hidden on mobile */}
-          <div className="hidden md:grid md:grid-cols-[1fr_1fr_1.35fr] bg-forge px-4 py-3 text-xs font-black uppercase tracking-[0.12em] text-white">
-            <span>SKU</span>
-            <span>Power Output</span>
-            <span>Primary Application</span>
-          </div>
-          {/* Rows */}
-          {productMatrix.map(([sku, power, application], index) => (
-            <div
-              key={sku}
-              className={`grid grid-cols-1 gap-2 border-t border-forge/12 px-4 py-4 text-sm md:grid-cols-[1fr_1fr_1.35fr] ${index % 2 === 0 ? 'bg-warm/70' : 'bg-white/35'}`}
-            >
-              <div className="flex justify-between md:block">
-                <span className="md:hidden label-kicker text-forge/40">SKU</span>
-                <span className="font-black uppercase">{sku}</span>
-              </div>
-              <div className="flex justify-between md:block">
-                <span className="md:hidden label-kicker text-forge/40">Power</span>
-                <span className="font-bold text-forge/72">{power}</span>
-              </div>
-              <div className="flex flex-col md:block mt-1 md:mt-0">
-                <span className="md:hidden label-kicker text-forge/40 mb-1">Application</span>
-                <span className="text-forge/65">{application}</span>
-              </div>
+
+        {/* 3.2 The Complete 7-SKU Specification Matrix */}
+        <div className="space-y-16 mt-12">
+
+          {/* ENKO Flow Series */}
+          <div>
+            <h3 className="text-2xl font-black uppercase text-forge border-b border-forge/20 pb-4 mb-6">ENKO Flow Series (AC Commercial Charging)</h3>
+            <p className="italic text-forge/70 mb-8">
+              <span className="font-semibold not-italic text-forge">Common Specifications:</span> OCPP 2.0.1 compliant, single/three-phase electrical compatibility, Wall-box or Pedestal mount ready.
+            </p>
+            <div className="grid gap-6 md:grid-cols-3 items-start">
+              {productCards.slice(0, 3).map((card, index) => (
+                <ProductCard key={card.name} card={card} index={index + 1} />
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* ENKO Storm Series */}
+          <div>
+            <h3 className="text-2xl font-black uppercase text-forge border-b border-forge/20 pb-4 mb-6">ENKO Storm Series (DC Fast Charging)</h3>
+            <p className="italic text-forge/70 mb-8">
+              <span className="font-semibold not-italic text-forge">Common Specifications:</span> Dual CCS2 guns, IP54 industrial protection, smart power sharing modules, high-visibility user UI screens.
+            </p>
+            <div className="grid gap-6 md:grid-cols-3 items-start">
+              {productCards.slice(3, 6).map((card, index) => (
+                <ProductCard key={card.name} card={card} index={index + 4} />
+              ))}
+            </div>
+          </div>
+
+          {/* ENKO Blaze Series */}
+          <div>
+            <h3 className="text-2xl font-black uppercase text-forge border-b border-forge/20 pb-4 mb-6">ENKO Blaze Series (DC Ultra-Fast Charging)</h3>
+            <div className="grid gap-6 md:grid-cols-3 items-start">
+              {productCards.slice(6, 7).map((card, index) => (
+                <ProductCard key={card.name} card={card} index={index + 7} />
+              ))}
+            </div>
+          </div>
+
         </div>
-        
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="border border-forge/15 p-5">
-            <h3 className="font-black uppercase">Flow common spec</h3>
-            <p className="mt-3 text-sm leading-6 text-forge/65">OCPP 2.0.1, single/three-phase compatibility, wall-box or pedestal mount ready.</p>
-          </div>
-          <div className="border border-forge/15 p-5">
-            <h3 className="font-black uppercase">Storm common spec</h3>
-            <p className="mt-3 text-sm leading-6 text-forge/65">Dual CCS2 guns, IP54 protection, smart power sharing, high-visibility user screens.</p>
-          </div>
-          <div className="border border-forge/15 p-5">
-            <h3 className="font-black uppercase">Blaze profile</h3>
-            <p className="mt-3 text-sm leading-6 text-forge/65">240kW+ DC ultra charging for heavy-duty bus networks and industrial corridors.</p>
-          </div>
-        </div>
+
       </div>
     </section>
   );

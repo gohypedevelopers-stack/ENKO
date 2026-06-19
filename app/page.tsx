@@ -1,7 +1,10 @@
+import { AboutSection } from '@/components/sections/about-section';
 import { CtaSection } from '@/components/sections/cta-section';
+import { FaqSection } from '@/components/sections/faq-section';
 import { HeroSection } from '@/components/sections/hero-section';
 import { MetricsSection } from '@/components/sections/metrics-section';
 import { OemSection } from '@/components/sections/oem-section';
+import { PartnersSection } from '@/components/sections/partners-section';
 import { RangeSection } from '@/components/sections/range-section';
 import { ServiceSection } from '@/components/sections/service-section';
 import { SiteFooter } from '@/components/site-footer';
@@ -12,10 +15,13 @@ export default function HomePage() {
     <main>
       <SiteHeader />
       <HeroSection />
+      {/* <AboutSection /> */}
       <MetricsSection />
       <RangeSection />
       <ServiceSection />
+
       <OemSection />
+
       <CtaSection />
       <SiteFooter />
     </main>
